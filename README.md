@@ -2,6 +2,8 @@
 
 ## DBMS Course Project (Python-Flask)
 
+The makerTruck program is an engineering outreach program by UOIT, sponsored by General Motors. Through this program highschool and elementary school students are exposed to various engineering related workshops to familiarize them with engineering concepts.
+
 ### Windows Setup
 
 - Install Git
