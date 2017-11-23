@@ -19,7 +19,7 @@ INSERT INTO workshops VALUES (5, 329, 'Electricity', 'An introductory workshop o
 
 CREATE TABLE Bins (
 	id		int	NOT NULL,
-	mame		varchar(255)	NOT NULL,
+	name		varchar(255)	NOT NULL,
 	workshop_id	int	NOT NULL,
 	quantity	int	NOT NULL,
 	PRIMARY KEY (id),
