@@ -11,10 +11,10 @@
     <title>UOIT MakerTruck Program</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="public/css/small-business.css" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/small-business.css')}}" rel="stylesheet">
 
   </head>
 
@@ -59,15 +59,15 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Sena Autos 2017</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Baba John 2017</p>
       </div>
       <!-- /.container -->
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="public/vendor/jquery/jquery.min.js"></script>
-    <script src="public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="public/js/scripts.js"></script>
+    <script href="{{url_for('static', filename='public/vendor/jquery/jquery.min.js')}}"></script>
+    <script href="{{url_for('static', filename='public/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script href="{{url_for('static', filename='public/js/scripts.js')}}"></script>
 
   </body>
 

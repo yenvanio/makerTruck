@@ -17,7 +17,7 @@ db = connection.Connection()
 
 @app.route('/', methods=['GET'])
 def index():
-    workshops = db.get_workshops()
+    workshops = db.get_workshopsAll()
     return render_template("index.html", workshops=workshops)
 
 @app.route('/workshops', methods=['GET'])
@@ -25,6 +25,13 @@ def workshops():
     workshops1 = db.get_availWorkshops()
     workshops2 = db.get_unavailWorkshops()
     return render_template("workshops.html", available=workshops1, unavailable=workshops2)
+
+@app.route('/workshop/<id>', methods=['GET'])
+def workshopID(id):
+    school_id = id
+    workshops = db.get_workshops(school_id)
+    school_name = db.get_schoolName(school_id)
+    return render_template("workshop.html", workshops=workshops, school_name=school_name)
 
 @app.route('/bins', methods=['GET'])
 def bins():
@@ -43,6 +50,21 @@ def trucks():
 def schools():
     schools = db.get_schools()
     return render_template("schools.html", schools=schools)
+
+@app.route('/stats', methods=['GET'])
+def stats():
+    schools1 = db.get_aboveAvgPrice()
+    schools2 = db.get_noBookSchool()
+    schools3 = db.get_bookSchool()
+    return render_template("stats.html", schoolsPrice=schools1, schoolsNoBook=schools2, schoolsBook=schools3)
+
+@app.route('/bookBins/<id>', methods=['GET'])
+def bookBins(id):
+    truck_id = id
+    bookBins = db.get_bookBins(truck_id)
+    return render_template("bookBins.html", bookBins=bookBins)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='localhost')

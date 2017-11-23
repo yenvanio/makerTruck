@@ -25,9 +25,9 @@
     <div class="col-md-4 mb-4">
       <div class="card h-100">
         <div class="card-body">
-          <h2 class="card-title">{{ row[0] }}</h2>
-          <p class="card-text">VIN: {{ row[1] }}</p>
-          <p class="card-text">License plate: {{ row[2] }}</p>
+          <h2 class="card-title">{{ row[1] }}</h2>
+          <p class="card-text">VIN: {{ row[2] }}</p>
+          <p class="card-text">License plate: {{ row[3] }}</p>
         </div>
         <div class="card-footer">
         </div>
@@ -56,11 +56,12 @@
     <div class="col-md-4 mb-4">
       <div class="card h-100">
         <div class="card-body">
-          <h2 class="card-title">{{ row[0] }}</h2>
-          <p class="card-text">VIN: {{ row[1] }}</p>
-          <p class="card-text">License plate: {{ row[2] }}</p>
+          <h2 class="card-title">{{ row[1] }}</h2>
+          <p class="card-text">VIN: {{ row[2] }}</p>
+          <p class="card-text">License plate: {{ row[3] }}</p>
         </div>
         <div class="card-footer">
+          <a class="btn btn-primary" href="/bookBins/{{ row[0] }}">More Info</a>
         </div>
       </div>
     </div>
