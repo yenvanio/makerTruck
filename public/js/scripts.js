@@ -1,6 +1,6 @@
-$(document).on('click', '.nav-item', function(event) {
+$(document).on('click', '.nav-link', function(event) {
     $('.nav-item').each(function(event){
       $(this).classList.remove('active');
     });
-    $(this).classList.add('active');
+    $(this).parent().classList.add('active');
 });​
