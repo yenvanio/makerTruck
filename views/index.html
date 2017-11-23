@@ -1,0 +1,58 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<body>
+
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Heading Row -->
+  <div class="row my-4">
+    <div class="col-lg-8">
+      <img class="img-fluid rounded" src="public/img/UOIT-SIRC.jpg" alt="">
+    </div>
+    <!-- /.col-lg-8 -->
+    <div class="col-lg-4">
+      <h1>Learn About Our Program</h1>
+      <p>The MakerTruck program at UOIT is sponsored by General Motors and it aims
+      to expose elementary and highschool students to engineering, in hopes
+      they will chose engineering as their post secondary field of study. We have
+      started the program and you can view other schools registered with us via the button below.</p>
+      <a class="btn btn-primary btn-lg" href="/schools">View Schools!</a>
+    </div>
+    <!-- /.col-md-4 -->
+  </div>
+  <!-- /.row -->
+
+  <!-- Call to Action Well -->
+  <div class="card text-white bg-secondary my-4 text-center">
+    <div class="card-body">
+      <h2 class="text-white m-0">View Our Workshops!</h2>
+    </div>
+    <div class="card-footer">
+      <a class="btn btn-primary" href="/workshops">More Info</a>
+    </div>
+  </div>
+
+  <!-- Content Row -->
+  <div class="row">
+    {% for row in workshops %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h2 class="card-title">{{ row[1] }}</h2>
+          <p class="card-text">{{ row[2] }}</p>
+        </div>
+        <div class="card-footer">
+        </div>
+      </div>
+    </div>
+    <!-- /.col-md-4 -->
+    {% endfor %}
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+</body>
+{% endblock %}
