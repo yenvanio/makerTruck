@@ -10,7 +10,7 @@ class Connection:
         self.cur.execute('select "id","name","description" from workshops')
         return self.cur.fetchall()
 
-    def get_workshops(self, school_id):
+    def get_workshops(self, school_id): # THIS ONE DOES NOT WORK
         self.cur.execute('select w."name", w."price", w."description", b."date" from workshops as w left join workshop_bookings as b on w."id" = b."workshop_id" left join schools as s on b."school_id" = s."id" where s."id" = %s', [school_id])
         return self.cur.fetchall()
 
@@ -60,6 +60,14 @@ class Connection:
 
     def get_bookBins(self, id):
         self.cur.execute('select b."name", t."model", t."license_plate" from bins as b left join workshop_bookings as wb on b."workshop_id" = wb."workshop_id" full join trucks as t on wb."truck_id"=t."id" where wb."date">now() and t."id" = %s', [id])
+        return self.cur.fetchall()
+
+    def get_workshop(self, workshop_id): # THIS ONE DOES NOT WORK
+        self.cur.execute('select * from workshops where id = %s', [workshop_id])
+        return self.cur.fetchall()
+
+    def get_truck(self, truck_id): # THIS ONE DOES NOT WORK
+        self.cur.execute('select * from trucks where id = %s', [truck_id])
         return self.cur.fetchall()
 
 #View Needed

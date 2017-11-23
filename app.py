@@ -66,5 +66,19 @@ def bookBins(id):
 
 
 
+@app.route('/api/workshops/<id>', methods=['GET'])
+def workshopAPI(id):
+    workshop_id = id
+    workshop = db.get_workshop(workshop_id)
+    return jsonify(workshop)
+
+@app.route('/api/trucks/<id>', methods=['GET'])
+def truckAPI(id):
+    truck_id = id
+    truck = db.get_truck(truck_id)
+    return jsonify(truck)
+
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='localhost')
