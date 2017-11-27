@@ -10,8 +10,8 @@ class Connection:
         self.cur.execute('select "id","name","description" from workshops')
         return self.cur.fetchall()
 
-    def get_workshops(self, school_id): # THIS ONE DOES NOT WORK
-        self.cur.execute('select w."name", w."price", w."description", b."date" from workshops as w left join workshop_bookings as b on w."id" = b."workshop_id" left join schools as s on b."school_id" = s."id" where s."id" = %s', [school_id])
+    def get_workshops(self, school_id):
+        self.cur.execute('select w."name", w."price", b."date" from workshops as w left join workshop_bookings as b on w."id" = b."workshop_id" left join schools as s on b."school_id" = s."id" where s."id" = %s', [school_id])
         return self.cur.fetchall()
 
     def get_availWorkshops(self):

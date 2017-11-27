@@ -4,7 +4,6 @@ from flask_wtf import Form
 from flask_wtf.csrf import CsrfProtect
 from wtforms import SelectField
 from db import helper as connection
-from db.models import Workshops
 
 # initalize server
 app = Flask(__name__, template_folder='views', static_folder='public')
@@ -26,12 +25,12 @@ def workshops():
     workshops2 = db.get_unavailWorkshops()
     return render_template("workshops.html", available=workshops1, unavailable=workshops2)
 
-@app.route('/workshop/<id>', methods=['GET'])
+@app.route('/history/<id>', methods=['GET'])
 def workshopID(id):
     school_id = id
     workshops = db.get_workshops(school_id)
     school_name = db.get_schoolName(school_id)
-    return render_template("workshop.html", workshops=workshops, school_name=school_name)
+    return render_template("history.html", workshops=workshops, school_name=school_name)
 
 @app.route('/bins', methods=['GET'])
 def bins():

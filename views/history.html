@@ -21,13 +21,13 @@
 
   <!-- Content Row -->
   <div class="row">
-    {% for row in workshop %}
+    {% for row in workshops %}
     <div class="col-md-4 mb-4">
       <div class="card h-100">
         <div class="card-body">
           <h2 class="card-title">{{ row[0] }}</h2>
           <p class="card-text">Price: ${{ row[1] }}</p>
-          <p class="card-text">About: {{ row[2] }}</p>
+          <p class="card-text">Date: {{ row[2] }}</p>
         </div>
         <div class="card-footer">
         </div>
