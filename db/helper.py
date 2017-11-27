@@ -59,7 +59,7 @@ class Connection:
         return self.cur.fetchall()
 
     def get_bookBins(self, id):
-        self.cur.execute('select b."name", t."model", t."license_plate" from bins as b left join workshop_bookings as wb on b."workshop_id" = wb."workshop_id" full join trucks as t on wb."truck_id"=t."id" where wb."date">now() and t."id" = %s', [id])
+        self.cur.execute('select b."name", t."model", t."license_plate" from bins as b left join workshop_bookings as wb on b."workshop_id" = wb."workshop_id" full join trucks as t on wb."truck_id"=t."id" where wb."date"= CURRENT_DATE and t."id" = %s', [id])
         return self.cur.fetchall()
 
     def get_workshop(self, workshop_id): # THIS ONE DOES NOT WORK
